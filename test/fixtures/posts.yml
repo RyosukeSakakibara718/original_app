@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  title: MyString
+  tag_id: 1
+  stay: 1
+  days: 
+  who: MyString
+  total_money: 1
+
+two:
+  user_id: 
+  title: MyString
+  tag_id: 1
+  stay: 1
+  days: 
+  who: MyString
+  total_money: 1

@@ -1,0 +1,269 @@
+h1{
+  font-size: 500px;
+}
+
+.col-md-6{
+  padding:100px;
+}
+
+.form-control{
+  margin-bottom: 50px;
+}
+
+
+
+
+
+.login-form-btn{
+  text-align: center;
+}
+
+body {
+  background-color: rgb(253, 162, 44);
+}
+
+.font-a{
+  font-size: 20px;
+  color: rgba(240, 240, 240, 0.932);
+}
+
+header{
+  height: 60px;
+  vertical-align: top;
+}
+
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.logo{
+  float: left;
+  color: black;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+  font-size: 15px;
+  color: black;
+  font-weight: 400;
+  background-color:rgb(228, 143, 33);
+  .logo {
+    float: left;
+    padding: 8px 20px;
+    font-size: 30px;
+    a{
+      color: white;
+    }
+  }
+  ul { 
+    float: right;
+    list-style: none;
+    li {
+      height: 60px;
+      padding-right: 20px;
+      display: table-cell;
+      vertical-align: middle;
+      a{
+        color: white;
+      }
+    }
+  }
+}
+
+.header-menu a{
+  font-weight: 200;
+}
+
+
+.top-main{
+  margin-top: 60px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /*height: auto;*/
+  min-height: 100%;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/wall_paper.jpg");
+}
+
+
+.main-copy{
+  padding: 20px 200px 20px 200px;
+  h1{
+    font-size: 60px;
+    font-weight:100;
+    margin-top: 70px;
+  }
+}
+
+.signup-box{
+  padding: 300px;
+  font-size: 30px;
+  text-decoration: none;
+  a{
+    color: white;
+  }
+}
+
+.user-info{
+  width: 1200px;
+}
+
+.user-self-info{
+  padding: 100px;
+  display: flex;
+}
+
+
+
+.user_img{
+  width: 200px;
+  height: 200px;
+}
+
+.info-right{
+  padding-left: 20px;
+  .profile-text{
+    width: 467px;
+    height: 141px;
+  }
+  .profile-edit{
+    position: relative;
+    top: -9px;
+    left: 10px;
+  }
+}
+
+.info-right-num{
+  display:flex;
+  align-items:flex-end;
+  height: 60px;
+  .info-name{
+    font-size: 50px;
+    font-weight: 400;
+  }
+  .info-account-name{
+    padding-left: 20px;
+    font-weight: 300;
+    position: relative;
+    top: -8px;
+  }
+  .follow{
+    display: flex;
+    padding: 10px;
+    .a{ 
+      padding-left: 20px;
+      font-size: 15px;
+    }
+    .b{
+      padding-left: 20px;
+      font-size: 15px;
+    }
+
+  }
+}
+
+.post-new-form{
+  padding: 100px;
+  width: 1100px;
+  .post-form-btn{
+    text-align: center;
+    padding: 30px;
+    letter-spacing: 10px;
+  }
+}
+.post-main{
+  padding: 30px;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  display: inline-flex;
+  .post-main-left{
+    width: 600px;
+    .post-title{
+      padding: 25px 20px 3px 0;
+      display: flex;
+      input{
+        font-size: 20px;
+        margin-left: 30px;
+        position: relative;
+        top: -10px;
+        height: 30px;
+        width: 300px;
+        border-bottom:1px solid #cccccc;
+        border-right:none;
+        border-left:none;
+        border-top:none;
+      }
+      input:focus{
+        outline: 0;
+      }
+    }
+    .post-tag{
+      display: flex;
+      padding-top: 20px;
+      margin-left: 20px;
+      label{
+        font-weight: 300;
+      }
+      input{
+        margin-left: 15px;
+        font-size: 13px;
+        height: 20px;
+        width: 200px;
+        border-bottom:1px solid #cccccc;
+        border-right:none;
+        border-left:none;
+        border-top:none;
+      }
+      input:focus{
+        outline: none;
+      }
+    }
+  }
+}
+
+.post-detail{
+  padding: 30px;
+  display: inline-flex;
+  width: 600px;
+  margin: 0;
+  .post-num{
+    padding-right: 20px;
+  }
+  .post-info{
+    padding-bottom: 30px;
+    display: flex;
+    width: 600px;
+    p{
+      width: 200px;
+    }
+
+    input{
+      width: 400px;
+      height: 20px;
+      border-bottom:1px solid #cccccc;
+      border-right:none;
+      border-left:none;
+      border-top:none;
+    }
+    input:focus{
+      outline: none; 
+     }
+  } 
+  .post-comment{
+    display: flex;
+    textarea{
+      margin-left: 130px;
+      width: 400px;
+      height: 150px;
+      overflow-wrap:break-word;
+      font-size: 20px;
+      resize: none;
+    }
+  }
+}

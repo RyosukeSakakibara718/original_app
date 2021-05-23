@@ -1,0 +1,20 @@
+<div class="user-info">
+  
+  <div class="user-self-info">
+    <div class="info-left">
+      <img src = "<%="/user_images/0.png"%>" class= "user_img">
+    </div>
+    <div class="info-right">
+      <div class="info-right-num">
+        <h1 class="info-name"><%= current_user.name %></h1>
+        <h3 class="info-account-name"><%= current_user.account_name %></h3>
+        <div class="follow">
+          <h3 class="a">___フォロー中</h3>
+          <h3 class="b">___フォロワー</h3>
+        </div>
+      </div>  
+      <textarea class="profile-text"></textarea>
+      <input type=submit value="編集" class="profile-edit">
+    </div>
+  </div>  
+</div>  

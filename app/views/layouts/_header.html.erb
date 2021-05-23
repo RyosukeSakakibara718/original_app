@@ -1,0 +1,19 @@
+<div class="logo">
+        <%= link_to 'Travel', root_path %>
+      </div>  
+        <div class="header-menus">
+          <ul class="header-menu">
+            <% if @current_user %>  
+              <li><%= link_to @current_user.name, user_path %></li>
+              <li><%= link_to "ログアウト", logout_path, method: :delete  %></li>
+              <li><%= link_to "新規投稿", new_post_path %></li>
+            <% end %>  
+
+            <li><%= link_to "検索" , root_path %></li>
+
+            <% unless @current_user %>
+              <li><%= link_to "ログイン" , session_new_path %></li>
+              <li><%= link_to "新規登録" , new_user_path %></li>
+            <% end %>  
+          </ul>
+        </div>
