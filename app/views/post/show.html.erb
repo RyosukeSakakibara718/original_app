@@ -1,2 +1,78 @@
-<h1>Post#show</h1>
-<p>Find me in app/views/post/show.html.erb</p>
+<div class="second-form">
+    <div class="second-form-inner">
+      <h1>旅のしおりを作る</h1>
+      <div class = "second-post-main">
+
+        <div class="second-post-main-left">
+          <div class="second-title">
+           <p>旅行タイトル：
+           <%= @post.title %>
+           </p>
+          </div>  
+          <div class="second-tag">
+            <p>タグ：</p>
+            <h3><%= @post.tag_id  %></h3>
+          </div>
+        </div>
+
+      <div class="second-post-main-right">
+        <div class="second-days">
+          <p>宿泊日数: <%=  @stay_object.content %><%= @days_object.content %></p>
+        </div >
+        <div class="secons-who">
+          <p>誰との旅行：<%= @who_object.content %></p>
+        </div>
+        <div class="second-total-money">
+          <p>この旅行にかけるお金：</p>
+          <%= @total_money_object.content %>
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+  <% @stay_all.each do |f| %>
+    <%= f.content %>
+    
+  <% end %>
+
+</div>
+
+<div class="detail-form">
+  <div class="post-detail">
+    <div class="post-num">
+      <p>1</p>
+    </div>
+    <div class="post-etc">
+      <div class="post-purpose post-info">
+        <p>目的<br>
+        <%= select_tag 'stay[purpose]', options_for_select(["観光", "宿泊", "食事", "休憩", "スポーツ", "移動", "自然"]) %></p>
+      </div>
+      <div class="post-place post-info">
+        <p>訪れた場所の名前：</p>
+        <input name="place">
+      </div>
+      <div class="post-address post-info">
+        <p>住所：</p>
+        <input name="address">
+      </div>
+      <div class="post-url post-info">
+        <p>URL：</p>
+        <input name="url">
+      </div>
+      <div class="post-hours post-info">
+        <p>営業時間：</p>
+        <input name="hours">
+      </div>
+      <div class="post-comment">
+        <p>コメント：</p>
+        <textarea></textarea>
+      </div>
+      <div class="post-image">
+        <p>写真</p>
+        <input type="file" name="image">  
+      </div>
+
+    </div>
+  </div>
+</div>

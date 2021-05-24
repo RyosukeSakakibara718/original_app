@@ -1,0 +1,2 @@
+class TotalMoneyObject < ApplicationRecord
+end

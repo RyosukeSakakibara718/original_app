@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_140226) do
+ActiveRecord::Schema.define(version: 2021_05_24_083929) do
+
+  create_table "days_objects", force: :cascade do |t|
+    t.integer "days_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
@@ -18,8 +25,22 @@ ActiveRecord::Schema.define(version: 2021_05_19_140226) do
     t.integer "tag_id"
     t.integer "stay"
     t.integer "days"
-    t.string "who"
+    t.integer "who"
     t.integer "total_money"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stay_objects", force: :cascade do |t|
+    t.integer "stay_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "total_money_objects", force: :cascade do |t|
+    t.integer "total_money_id"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +54,13 @@ ActiveRecord::Schema.define(version: 2021_05_19_140226) do
     t.string "password_digest"
     t.string "account_name"
     t.string "user_iamge"
+  end
+
+  create_table "whos_objects", force: :cascade do |t|
+    t.integer "who_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
