@@ -131,6 +131,8 @@ header {
   .profile-text{
     width: 467px;
     height: 141px;
+    border: none;
+    resize: none;
   }
   .profile-edit{
     position: relative;
@@ -278,8 +280,9 @@ header {
   .second-post-main{
     padding: 30px;
     border: solid 1px #cccccc;
-    border-radius: 2px;
+    border-radius: 7px;
     display: inline-flex;
+    margin-bottom: 30px;
     .second-post-main-left{
       width: 500px;
       .second-title{
@@ -304,4 +307,39 @@ header {
 
 .detail-form{
   padding: 100px;
+  .detail-form-btn{
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.made-detail{
+  padding: 40px;
+  width: 740px;
+  .made-detail-inner{
+    width: 660px;
+    border:dotted 2px #cccccc;
+    border-radius: 7px;
+    padding: 20px;
+    display: inline-block;
+    .detail-num{
+      padding: 5px;
+      display: inline-block;
+    }
+    .made-detail-purpose{
+      background-color: #cccccc;
+      display:inline-block;
+      height: 27px;
+      padding: 5px;
+      margin-bottom: 7px;
+      border-radius: 10px;
+    }
+    .made-detail-name{
+      font-size: 27px;
+    }
+    .made-detail-url{
+      font-size: 10px;
+      padding-bottom: 10px;
+    }
+  }
 }

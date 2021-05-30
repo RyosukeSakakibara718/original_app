@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_083929) do
+ActiveRecord::Schema.define(version: 2021_05_29_182555) do
 
   create_table "days_objects", force: :cascade do |t|
     t.integer "days_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "post_details", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+    t.integer "purpose"
+    t.string "name"
+    t.string "place"
+    t.text "url"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.time "hours_open"
+    t.time "hours_close"
+    t.string "detail_image"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -27,6 +42,13 @@ ActiveRecord::Schema.define(version: 2021_05_24_083929) do
     t.integer "days"
     t.integer "who"
     t.integer "total_money"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purpose_objects", force: :cascade do |t|
+    t.integer "purpose_id"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

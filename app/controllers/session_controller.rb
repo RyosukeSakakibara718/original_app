@@ -4,13 +4,13 @@ class SessionController < ApplicationController
 
   def login
     user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
-      redirect_to user_path(user)
+    if  user && user.authenticate(params[:session][:password])
+        log_in user
+        redirect_to user_path(user)
     else
-      flash.now[:danger] = 'Invalid email/password combination' # 本当は正しくない
-      render :new
+        render 'new'
     end
+
   end
 
   def logout
