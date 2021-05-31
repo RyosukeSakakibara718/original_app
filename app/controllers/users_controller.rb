@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
       log_in @user
+
     end
   end
 
