@@ -1,38 +1,6 @@
-h1{
-  font-size: 500px;
-}
-
-.col-md-6{
-  padding:100px;
-}
-
-.form-control{
-  margin-bottom: 50px;
-}
-
-
-
-
-
-.login-form-btn{
-  text-align: center;
-}
-
 body {
   background-color: rgb(253, 162, 44);
 }
-
-.font-a{
-  font-size: 20px;
-  color: rgba(240, 240, 240, 0.932);
-}
-
-header{
-  height: 60px;
-  vertical-align: top;
-}
-
-
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -43,10 +11,9 @@ header{
 }
 
 header {
-  background-color: rgb(255, 255, 255);
   font-size: 15px;
-  color: black;
   font-weight: 400;
+  height: 60px;
   background-color:rgb(228, 143, 33);
   .logo {
     float: left;
@@ -75,6 +42,21 @@ header {
   font-weight: 200;
 }
 
+.dropdown-menu{
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  left: -165px;
+  .dropdown-login{
+    padding: 20px;
+    .login-btn{
+      position: relative;
+      top: 20px;
+      left: 90px;
+    }
+  }
+}
+
 
 .top-main{
   margin-top: 60px;
@@ -91,6 +73,21 @@ header {
   background-image: url("/wall_paper.jpg");
 }
 
+.user-make{
+  padding-top: 100px;
+  p{
+    text-align: center;
+    font-size: 35px;
+    padding: 30px;
+  }
+  .user-make-label{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .form-control{
+    margin-bottom: 20px;
+  }
+}
 
 .main-copy{
   padding: 20px 200px 20px 200px;
@@ -129,11 +126,12 @@ header {
 .info-right{
   padding-left: 20px;
   .profile-text{
-    width: 467px;
-    height: 141px;
+    width: 457px;
+    height: 131px;
     border: solid 1px #cccccc;
     border-radius: 15px;
     resize: none;
+    padding: 5px;
   }
   .profile-edit{
     position: relative;
@@ -169,6 +167,11 @@ header {
     }
 
   }
+}
+
+.info-rr{
+  position: relative;
+  top: 180px;
 }
 
 .post-new-form{
@@ -368,13 +371,76 @@ header {
         resize: none;
       }
     }
-    .edit-image-form{
-      padding-top: 20px;
-      text-align: center;
-      display: inline-block;
+    .edit-image{
+      input{
+        text-align: center;
+      }
     }
     .edit-btn{
       margin-bottom: 100px;
     }
   }
+}
+
+.info-edit-name{
+  height: 85px;
+  border: solid 1px #cccccc; 
+  border-radius: 6px;
+  .edit-name-form{
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    border: solid 1px #cccccc; 
+    border-radius: 0;  
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.info-edit-account-name{
+  margin-left: 30px;
+  height: 85px;
+  border: solid 1px #cccccc; 
+  margin-bottom: 0px;
+  border-radius: 6px;
+  .edit-account-name-form{
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    border: solid 1px #cccccc; 
+    border-radius: 0;  
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.info-edit-email{
+  margin-top: 20px;
+  height: 85px;
+  border: solid 1px #cccccc; 
+  margin-bottom: 0px;
+  border-radius: 6px;
+  .edit-email-form{
+    width: 450px;
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    border: solid 1px #cccccc; 
+    border-radius: 0;  
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.edit-comment-form{
+  margin-top: 20px;
+  width: 452px;
+  height: 120px;
+  resize: none;
+}
+
+.edit-btn{
+  position: relative;
+  top: 280px;
+  left: 10px;
 }

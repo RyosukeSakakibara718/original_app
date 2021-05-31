@@ -13,8 +13,10 @@
           <h3 class="b">___フォロワー</h3>
         </div>
       </div>  
-      <textarea class="profile-text"><%= @user.comment %></textarea>
-      <%= link_to '編集', edit_user_path(id: @user.id) %>
+      <div class="profile-text"><%= @user.comment %></div>
+    </div>
+    <div class="info-rr">
+      <%= link_to '編集', edit_user_path(id: @user.id) ,class:"info-edit" %>
     </div>
   </div>  
 </div>  

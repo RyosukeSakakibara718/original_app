@@ -19,12 +19,20 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(session[:user_id])
-    @user.update(params.require(:user).permit(:name,:account_name,:user_image,:email,:comment,:password,:password_confirmation))
+    @user.name= params[:name]
+    @user.account_name= params[:account_name]
+    @user.email= params[:email]
+    @user.comment= params[:comment]
+    @user.name= params[:name]
     if params[:user_image]
       @user.user_image = "#{@user.id}.jpg"
       FIle.binwrite("public/user_iamges/#{@user.user_image}",image.read)
     end
-    redirect_to @user
+    if @user.save
+      redirect_to @user
+    else
+      redirect_to root_path
+    end
   end
 
   def show
