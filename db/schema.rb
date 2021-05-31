@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_094952) do
     t.string "account_name"
     t.string "user_image"
     t.string "comment"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "whos_objects", force: :cascade do |t|
