@@ -131,7 +131,8 @@ header {
   .profile-text{
     width: 467px;
     height: 141px;
-    border: none;
+    border: solid 1px #cccccc;
+    border-radius: 15px;
     resize: none;
   }
   .profile-edit{
@@ -340,6 +341,40 @@ header {
     .made-detail-url{
       font-size: 10px;
       padding-bottom: 10px;
+    }
+  }
+}
+
+.edit-form{
+  width: 70%;
+  .edit-form-inner{
+    text-align: center;
+    padding-top: 100px;
+    .edit-name{
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      font-size: 30px;
+    }
+    .edit-account{
+      border: none;
+      padding: 15px 0;
+    }
+    .edit-comment{
+      padding: 40px 0;
+      textarea{
+        width: 350px;
+        height: 100px;
+        resize: none;
+      }
+    }
+    .edit-image-form{
+      padding-top: 20px;
+      text-align: center;
+      display: inline-block;
+    }
+    .edit-btn{
+      margin-bottom: 100px;
     }
   }
 }

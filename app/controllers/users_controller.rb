@@ -5,15 +5,30 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.user_iamge = "0.jpg"
+    @user.user_image = "0.jpg"
     if @user.save
       redirect_to @user
       log_in @user
     end
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    @user.update(params.require(:user).permit(:name,:account_name,:user_image,:email,:comment,:password,:password_confirmation))
+    if params[:user_image]
+      @user.user_image = "#{@user.id}.jpg"
+      FIle.binwrite("public/user_iamges/#{@user.user_image}",image.read)
+    end
+    redirect_to @user
+  end
+
   def show
     @user = User.find(session[:user_id])
+    current_user
   end
 
   def index
@@ -23,6 +38,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:account_name,:email,:password,:password_confirmation)
+    params.require(:user).permit(:name,:account_name,:email,:comment,:password,:password_confirmation)
   end
 end

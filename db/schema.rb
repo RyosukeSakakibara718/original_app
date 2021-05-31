@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_182555) do
+ActiveRecord::Schema.define(version: 2021_05_31_094952) do
 
   create_table "days_objects", force: :cascade do |t|
     t.integer "days_id"
@@ -75,7 +75,8 @@ ActiveRecord::Schema.define(version: 2021_05_29_182555) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "account_name"
-    t.string "user_iamge"
+    t.string "user_image"
+    t.string "comment"
   end
 
   create_table "whos_objects", force: :cascade do |t|

@@ -2,7 +2,7 @@
   
   <div class="user-self-info">
     <div class="info-left">
-      <img src = "<%="/user_images/0.png"%>" class= "user_img">
+      <img src = "<%="/user_images/#{@user.user_image}"%>" class= "user_img">
     </div>
     <div class="info-right">
       <div class="info-right-num">
@@ -13,8 +13,8 @@
           <h3 class="b">___フォロワー</h3>
         </div>
       </div>  
-      <textarea class="profile-text"></textarea>
-      <input type=submit value="編集" class="profile-edit">
+      <textarea class="profile-text"><%= @user.comment %></textarea>
+      <%= link_to '編集', edit_user_path(id: @user.id) %>
     </div>
   </div>  
 </div>  

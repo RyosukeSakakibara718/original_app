@@ -4,7 +4,7 @@
         <div class="header-menus">
           <ul class="header-menu">
             <% if session[:user_id] %>  
-              <li><%= link_to User.find_by(id: session[:user_id]).name, user_path(session[:user_id]) %></li>
+              <li><%= link_to User.find(session[:user_id]).name, user_path(session[:user_id]) %></li>
               <li><%= link_to "ログアウト", logout_path, method: :delete  %></li>
               <li><%= link_to "新規投稿", new_post_path %></li>
             <% else %>  

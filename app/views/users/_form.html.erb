@@ -1,0 +1,24 @@
+<%= form_tag("/users/#{@user.id}", method: 'post', multipart: true) do %>
+  <div class="edit-form">
+    <div class="edit-form-inner">
+
+      <p>名前</p>
+      <input name="name" value="<%= @user.name %>">
+
+      <div class="edit-image">
+      <p>現在の画像</p>
+      <img src="/user_images/<%= @user.user_image %>" >
+      <p>画像</p>
+      <input name="user_iamge" type="file" class="edit-image-form">
+      </div>
+      
+      <p>メールアドレス</p>
+      <input name="email" value="<%= @user.email %>"><br>
+      <input type="submit" value="保存">
+
+    </div>  
+  </div>  
+<<% end %>
+
+
+         
