@@ -82,43 +82,4 @@
     <% end %>  
 
 </div>
-
-<%= form_for @post_detail, url:{controller: :post, action: :create_detail} do |f| %>
-  <div class="detail-form">
-    <div class="post-detail">
-      <div class="post-num">
-        <p>1</p>
-      </div>
-      <div class="post-etc">
-        <div class="post-purpose post-info">
-          <p>目的<br>
-          <%= f.select :purpose, {'観光': 1,  '宿泊': 2, '食事': 3, '休憩': 4, 'スポーツ': 5, '移動': 6, '自然': 7, '買い物': 8}, { required: true } %>
-        </div>
-        <div class="post-place post-info">
-          <p>訪れた場所の名前：</p>
-          <%= f.text_field :name %>
-          </div>
-        <div class="post-address post-info">
-          <p>住所：</p>
-          <%= f.text_field :place %>
-        </div>
-        <div class="post-url post-info">
-          <p>URL：</p>
-          <%= f.text_field :url %>
-        </div>
-        <div class="post-hours post-info">
-          <p>営業時間：</p>
-          <p>開始時間：<%= f.time_select :hours_open, { required: true } %></p>
-          <p>終業時間：<%= f.time_select :hours_close, { required: true } %></p>
-        </div>
-        <div class="post-comment">
-         <p>コメント：</p>
-          <%= f.text_area :comment %>
-        </div>
-        <div class="detail-form-btn">
-          <%= f.submit "追加する", :name=>"add" %><%= f.submit "確認画面へ", formaction: post_confirm_path %>
-        <div>
-      </div>
-    </div>
-  </div>
-<% end %>   
+<%= render "post/form" %>

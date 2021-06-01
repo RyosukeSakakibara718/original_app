@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user.name= params[:name]
     if params[:user_image]
       @user.user_image = "#{@user.id}.jpg"
-      FIle.binwrite("public/user_iamges/#{@user.user_image}",image.read)
+      File.binwrite("public/user_images/#{@user.id}.jpg",params[:user_image].read)
     end
     if @user.save
       redirect_to @user
@@ -37,7 +37,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    @post = Post.where(user_id: @user.id)
     current_user
+    @post_detail = PostDetail.where(post_id: @post.ids)
+    #@post_detail = PostDetail.where(post_id: @post.ids) idsで合っているのか？
   end
 
   def index

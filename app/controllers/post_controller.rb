@@ -23,7 +23,6 @@ class PostController < ApplicationController
     @post = Post.find(params[:id])
     object_find @post
     @post_detail = PostDetail.new
-
     @made_post_detail = PostDetail.where(post_id: @post.id)
   end
 
@@ -38,9 +37,6 @@ class PostController < ApplicationController
   else
     render :new
   end
-  if params[:confirm]
-    redirect_to post_confirm_path(id: @post.id)
-  end
   end
 
   def post_confirm
@@ -49,6 +45,7 @@ class PostController < ApplicationController
     @post_detail = PostDetail.find_by(post_id: @post.id)
     object_find @post
     @made_post_detail = PostDetail.where(post_id: @post.id)
+    redirect_to user_path(id: @user)
   end
 
   def edit
@@ -64,7 +61,7 @@ class PostController < ApplicationController
   end
 
   def post_detail_params
-    params.require(:post_detail).permit(:name,:place,:purpose,:url,:hours_open,:hours_close,:comment)
+    params.require(:post_detail).permit(:name,:place,:purpose,:url,:hours_open,:hours_close,:comment,:detail_image)
   end
 
 end

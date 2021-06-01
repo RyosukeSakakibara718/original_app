@@ -19,4 +19,9 @@
       <%= link_to '編集', edit_user_path(id: @user.id) ,class:"info-edit" %>
     </div>
   </div>  
+  <div>
+    <% @post_detail.each do |f| %>
+    <%= f.name %>
+    <% end %>
+  </div>
 </div>  
