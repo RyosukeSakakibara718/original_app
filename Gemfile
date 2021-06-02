@@ -67,3 +67,5 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'bcrypt'
 
 gem 'jquery-rails'
+
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'

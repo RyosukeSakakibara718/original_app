@@ -33,6 +33,8 @@ class PostController < ApplicationController
     @post_detail.post_id = @post.id 
     @post_detail.user_id = @post.user_id
   if @post_detail.save
+    uploader = PostDetailImagesUploader.new
+    uploader.store!(params[:user_images])
     redirect_to post_path(id: @post.id)
   else
     render :new

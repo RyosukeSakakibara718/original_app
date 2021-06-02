@@ -30,6 +30,10 @@
          <p>コメント：</p>
           <%= f.text_area :comment %>
         </div>
+        <div>
+          <p>この旅行の写真：</p>
+          <%= f.file_field :user_images %>
+        </div>
         <div class="detail-form-btn">
           <%= f.submit "追加する", :name=>"add" %><%= f.submit "確認画面へ", formaction: post_confirm_path %>
         <div>
