@@ -33,11 +33,9 @@ class PostController < ApplicationController
     @post_detail.post_id = @post.id 
     @post_detail.user_id = @post.user_id
   if @post_detail.save
-    uploader = PostDetailImagesUploader.new
-    uploader.store!(params[:user_images])
     redirect_to post_path(id: @post.id)
   else
-    render :new
+    render :show
   end
   end
 
@@ -47,7 +45,25 @@ class PostController < ApplicationController
     @post_detail = PostDetail.find_by(post_id: @post.id)
     object_find @post
     @made_post_detail = PostDetail.where(post_id: @post.id)
-    redirect_to user_path(id: @user)
+  end
+
+  def detail_edit
+    @post_detail = PostDetail.find(params[:id])
+  end
+
+  def detail_update
+    @post_detail = PostDetail.find(params[:id])
+    @post_detail.name = params[:name]
+    @post_detail.place = params[:place]
+    @post_detail.purpose = params[:purpose]
+    @post_detail.url = params[:url]
+    @post_detail.hours_open = params[:hours_open]
+    @post_detail.hours_close = params[:hours_close]
+    @post_detail.comment = params[:comment]
+    @post_detail.detail_image = params[:detail_image]
+    if @post_detail.save
+      redirect_to post_confirm_path(id: @post_detail.post_id)
+    end
   end
 
   def edit

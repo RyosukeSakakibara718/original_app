@@ -1,0 +1,94 @@
+<div class="second-form">
+
+
+      <div class="made-detail">
+      <p>現在の投稿</p>
+          <div class="made-detail-inner">
+          <div class="made-detail-left">
+             <div class="detail-image">
+               <img src = "<%="#{@post_detail.detail_image}"%>" class= "detail_img">
+             </div>
+          </div>
+          <div class="made-detail-right">
+            <div class="made-detail-purpose">
+            <p>目的：<%= PurposeObject.find_by(purpose_id: @post_detail.purpose).content %></p></div>
+            <div class="made-detail-name"><p>訪れた場所：<%= @post_detail.name %></p></div>
+            <div class="made-detail-url"><p>参考URL：<%= link_to "詳しくはこちら", @post_detail.url, target: :_blank %></p></div>
+            <div class="made-detail-place"><p>場所：<%= @post_detail.place %></p></div>
+            <div class="made-detail-hours"><p>営業時間：
+
+            <% if @post_detail.hours_open.hour != 0 %>
+              <%= @post_detail.hours_open.hour %> :
+            <% else %>
+              00 :
+            <% end %>
+
+            <% if @post_detail.hours_open.min != 0 %>
+              <%= @post_detail.hours_open.min %>から
+            <% else %>
+              00から
+            <% end %>
+                    
+            <% if @post_detail.hours_close.hour != 0 %>
+              <%= @post_detail.hours_close.hour %> :
+            <% else %>
+              00 :
+            <% end %>  
+            
+            <% if @post_detail.hours_close.min != 0 %>
+              <%=  @post_detail.hours_close.min %>まで
+            <% else %>  
+              00まで
+            <% end %>
+            
+            </p></div>
+            <div><p>コメント：<%= @post_detail.comment %></p></div>
+          </div>  
+        </div>  
+      </div>
+
+</div>
+
+<%= form_for @post_detail, url:{controller: :post, action: :detail_update} do |f| %>
+  <div class="detail-form">
+    <div class="post-detail">
+      <div class="post-num">
+        <p>1</p>
+      </div>
+      <div class="post-etc">
+        <div class="post-purpose post-info">
+          <p>目的<br>
+          <%= f.select :purpose, {'観光': 1,  '宿泊': 2, '食事': 3, '休憩': 4, 'スポーツ': 5, '移動': 6, '自然': 7, '買い物': 8}, { required: true } %>
+        </div>
+        <div class="post-place post-info">
+          <p>訪れた場所の名前：</p>
+          <%= f.text_field :name %>
+          </div>
+        <div class="post-address post-info">
+          <p>住所：</p>
+          <%= f.text_field :place %>
+        </div>
+        <div class="post-url post-info">
+          <p>URL：</p>
+          <%= f.text_field :url %>
+        </div>
+        <div class="post-hours post-info">
+          <p>営業時間：</p>
+          <p>開始時間：<%= f.time_select :hours_open, { required: true } %></p>
+          <p>終業時間：<%= f.time_select :hours_close, { required: true } %></p>
+        </div>
+        <div class="post-comment">
+         <p>コメント：</p>
+          <%= f.text_area :comment %>
+        </div>
+        <div>
+          <p>この旅行の写真：</p>
+          <%= f.file_field :detail_image %>
+        </div>
+        <div class="detail-form-btn">
+        <%= f.submit "上記の内容で修正する" %>
+        <div>
+      </div>
+    </div>
+  </div>
+<% end %>

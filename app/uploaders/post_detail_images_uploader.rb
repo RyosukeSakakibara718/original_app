@@ -11,7 +11,7 @@ class PostDetailImagesUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    "detail_images/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -42,7 +42,7 @@ class PostDetailImagesUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-    def filename
-      "#{@post.id},#{@post_detail.id}.jpg" if original_filename
-    end
+    #def filename
+      #"#{@post.id},#{@post_detail.id}.jpg" if original_filename
+    #end
 end

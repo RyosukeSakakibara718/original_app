@@ -40,6 +40,11 @@
       <div class="made-detail">
           <div class="made-detail-inner">
           <div class="made-detail-left">
+             <div class="detail-image">
+               <img src = "<%="#{f.detail_image}"%>" class= "detail_img">
+             </div>
+          </div>
+          <div class="made-detail-right">
             <p class="detail-num"><%= i %></p>
             <div class="made-detail-purpose">
             <p>目的：<%= PurposeObject.find_by(purpose_id: f.purpose).content %></p></div>
@@ -76,9 +81,13 @@
             <div><p>コメント：<%= f.comment %></p></div>
           </div>  
         </div>  
+        <div class="detail-edit"><%= link_to "修正する", detail_edit_path(id: f.id) , class: "detail-edit-btn" %></div>
       </div>
 
       <% end %>
+      <div class="finish-edit">
+      <%= link_to "完成", user_path , class: "finish-edit-btn" %>
+      </div>
     <% end %>  
 
 </div>

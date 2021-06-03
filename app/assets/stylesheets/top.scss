@@ -325,26 +325,56 @@ header {
     border:dotted 2px #cccccc;
     border-radius: 7px;
     padding: 20px;
+    display: inline-flex;
+    .made-detail-right{
+      width: 70%;
+
+      .detail-num{
+        padding: 5px;
+        display: inline-block;
+      }
+      .made-detail-purpose{
+        background-color: #cccccc;
+        display:inline-block;
+        height: 27px;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 10px;
+      }
+      .made-detail-name{
+        font-size: 27px;
+      }
+      .made-detail-url{
+        font-size: 10px;
+        padding-bottom: 10px;
+      }
+    }
+    .made-detail-left{
+      .detail-image{
+        padding-right: 30px;
+        img{
+          width: 200px;
+          height: 200px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .detail-edit{
     display: inline-block;
-    .detail-num{
-      padding: 5px;
-      display: inline-block;
+    margin-top:10px ;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    padding: 2px 5px;
+    border: black 1px solid;
+    .detail-edit-btn{
+      color: black; 
+      text-decoration: none;
     }
-    .made-detail-purpose{
-      background-color: #cccccc;
-      display:inline-block;
-      height: 27px;
-      padding: 5px;
-      margin-bottom: 7px;
-      border-radius: 10px;
-    }
-    .made-detail-name{
-      font-size: 27px;
-    }
-    .made-detail-url{
-      font-size: 10px;
-      padding-bottom: 10px;
-    }
+  }
+  .detail-edit:hover{
+    box-shadow:0px 0px 2px #ccc;
+    background-color: #d6d6d6;
   }
 }
 
@@ -379,6 +409,7 @@ header {
     .edit-btn{
       margin-bottom: 100px;
     }
+
   }
 }
 
@@ -443,4 +474,44 @@ header {
   position: relative;
   top: 280px;
   left: 10px;
+}
+
+.finish-edit{
+  text-align: center;
+  background-color: #e6e6e6;
+  display: inline-block;
+  margin-left: 40%;
+  font-size: 13px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: black 1px solid;
+ .finish-edit-btn{
+  color: black;
+  text-decoration: none;
+ } 
+}
+.finish-btn:hover{
+  box-shadow:0px 0px 10px #ccc;
+  background-color: #d0d0d0;
+  
+}
+
+.go-confirm{
+  text-align: center;
+  background-color: #e6e6e6;
+  display: inline-block;
+  margin-left: 40%;
+  font-size: 13px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: black 1px solid;
+  .go-confirm-btn{
+    color: black;
+    text-decoration: none;
+  }
+}
+.go-confirm:hover{
+  box-shadow:0px 0px 10px #ccc;
+  background-color: #d0d0d0;
+  
 }

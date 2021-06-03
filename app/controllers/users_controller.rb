@@ -39,8 +39,11 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     @post = Post.where(user_id: @user.id)
     current_user
-    @post_detail = PostDetail.where(post_id: @post.ids)
+    #@post_detail = PostDetail.where(post_id: @post.ids)
     #@post_detail = PostDetail.where(post_id: @post.ids) idsで合っているのか？
+      #@post.each do |p|
+        #@post_details = PostDetail.where(posr_id: p.id) 
+      #end
   end
 
   def index

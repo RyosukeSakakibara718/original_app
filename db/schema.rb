@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_094952) do
+ActiveRecord::Schema.define(version: 2021_05_30_175428) do
 
   create_table "days_objects", force: :cascade do |t|
     t.integer "days_id"
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2021_05_31_094952) do
     t.string "account_name"
     t.string "user_image"
     t.string "comment"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "whos_objects", force: :cascade do |t|
