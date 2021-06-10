@@ -1,0 +1,2 @@
+class WhoObject < ApplicationRecord
+end

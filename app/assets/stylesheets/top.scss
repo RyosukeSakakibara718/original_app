@@ -126,8 +126,8 @@ header {
 .info-right{
   padding-left: 20px;
   .profile-text{
-    width: 457px;
-    height: 131px;
+    width: 360px;
+    height: 115px;
     border: solid 1px #cccccc;
     border-radius: 15px;
     resize: none;
@@ -140,16 +140,21 @@ header {
   }
 }
 
+.info-right-name{
+  .info-name{
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+}
+
 .info-right-num{
+  position: relative;
   display:flex;
   align-items:flex-end;
-  height: 60px;
-  .info-name{
-    font-size: 50px;
-    font-weight: 400;
-  }
+  height: 35px;
+  padding-bottom: 0px;
   .info-account-name{
-    padding-left: 20px;
     font-weight: 300;
     position: relative;
     top: -8px;
@@ -172,6 +177,7 @@ header {
 .info-rr{
   position: relative;
   top: 180px;
+  padding-left: 10px;
 }
 
 .post-new-form{
@@ -472,7 +478,7 @@ header {
 
 .edit-btn{
   position: relative;
-  top: 280px;
+  top: 255px;
   left: 10px;
 }
 
