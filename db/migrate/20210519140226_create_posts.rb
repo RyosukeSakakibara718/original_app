@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :tag_id
       t.integer :stay
       t.integer :days
-      t.string :who
+      t.integer :who
       t.integer :total_money
 
       t.timestamps

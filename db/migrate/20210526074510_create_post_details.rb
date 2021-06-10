@@ -8,6 +8,9 @@ class CreatePostDetails < ActiveRecord::Migration[5.2]
       t.string :place
       t.text :url
       t.string :comment
+      t.time :hours_open
+      t.time :hours_close
+      t.string :detail_image
 
       t.timestamps
     end

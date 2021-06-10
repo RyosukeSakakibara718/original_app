@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_175428) do
+ActiveRecord::Schema.define(version: 2021_05_29_182555) do
 
   create_table "days_objects", force: :cascade do |t|
-    t.integer "days_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,11 +26,11 @@ ActiveRecord::Schema.define(version: 2021_05_30_175428) do
     t.string "place"
     t.text "url"
     t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.time "hours_open"
     t.time "hours_close"
     t.string "detail_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -47,21 +46,18 @@ ActiveRecord::Schema.define(version: 2021_05_30_175428) do
   end
 
   create_table "purpose_objects", force: :cascade do |t|
-    t.integer "purpose_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "stay_objects", force: :cascade do |t|
-    t.integer "stay_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "total_money_objects", force: :cascade do |t|
-    t.integer "total_money_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,16 +67,15 @@ ActiveRecord::Schema.define(version: 2021_05_30_175428) do
     t.string "name"
     t.string "email"
     t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "account_name"
     t.string "user_image"
     t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "whos_objects", force: :cascade do |t|
-    t.integer "who_id"
+  create_table "whos", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
