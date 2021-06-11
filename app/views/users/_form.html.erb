@@ -1,0 +1,43 @@
+<%= form_tag("/users/#{@user.id}", method: 'patch', multipart: true) do %>
+  <div class="user-info">
+    <div class="user-self-info">
+
+      <div class="info-left">
+        <img src = "<%="/user_images/#{@user.user_image}"%>" class= "user_img">
+        <div class="info-edit-image">
+          <p>プロフィール画像</p>
+          <input type="file" name="user_image">
+        </div>
+      </div>
+
+      <div class="info-right">
+
+        <div class="info-right-num">
+          
+            
+            <div class="info-edit-name">
+              <p>名前<p>
+              <input name="name" class="edit-name-form" value="<%= @user.name %>">
+            </div>
+    
+            <div class="info-edit-account-name">
+              <p>アカウント名</p>
+              <input name="account_name" class="edit-account-name-form" value="<%= @user.account_name %>">
+            </div>  
+  
+        </div>  
+
+        <div class="info-edit-email">  
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>" class="edit-email-form">
+        </div> 
+
+        <textarea name="comment" class="edit-comment-form"><%= @user.comment %></textarea>
+
+      </div>
+      <div class="edit-btn">
+        <input type="submit" value="決定">
+      </div>
+    </div>  
+ </div>
+<% end %>

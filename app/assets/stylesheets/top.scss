@@ -1,0 +1,523 @@
+body {
+  background-color: rgb(253, 162, 44);
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.logo{
+  float: left;
+  color: black;
+}
+
+header {
+  font-size: 15px;
+  font-weight: 400;
+  height: 60px;
+  background-color:rgb(228, 143, 33);
+  .logo {
+    float: left;
+    padding: 8px 20px;
+    font-size: 30px;
+    a{
+      color: white;
+    }
+  }
+  ul { 
+    float: right;
+    list-style: none;
+    li {
+      height: 60px;
+      padding-right: 20px;
+      display: table-cell;
+      vertical-align: middle;
+      a{
+        color: white;
+      }
+    }
+  }
+}
+
+.header-menu a{
+  font-weight: 200;
+}
+
+.dropdown-menu{
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  left: -165px;
+  .dropdown-login{
+    padding: 20px;
+    .login-btn{
+      position: relative;
+      top: 20px;
+      left: 90px;
+    }
+  }
+}
+
+
+.top-main{
+  margin-top: 60px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /*height: auto;*/
+  min-height: 100%;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/wall_paper.jpg");
+}
+
+.user-make{
+  padding-top: 100px;
+  p{
+    text-align: center;
+    font-size: 35px;
+    padding: 30px;
+  }
+  .user-make-label{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .form-control{
+    margin-bottom: 20px;
+  }
+}
+
+.main-copy{
+  padding: 20px 200px 20px 200px;
+  h1{
+    font-size: 60px;
+    font-weight:100;
+    margin-top: 70px;
+  }
+}
+
+.signup-box{
+  padding: 300px;
+  font-size: 30px;
+  text-decoration: none;
+  a{
+    color: white;
+  }
+}
+
+.user-info{
+  width: 1200px;
+}
+
+.user-self-info{
+  padding: 100px;
+  display: flex;
+}
+
+
+
+.user_img{
+  width: 200px;
+  height: 200px;
+}
+
+.info-right{
+  padding-left: 20px;
+  .profile-text{
+    width: 360px;
+    height: 115px;
+    border: solid 1px #cccccc;
+    border-radius: 15px;
+    resize: none;
+    padding: 5px;
+  }
+  .profile-edit{
+    position: relative;
+    top: -9px;
+    left: 10px;
+  }
+}
+
+.info-right-name{
+  .info-name{
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+}
+
+.info-right-num{
+  position: relative;
+  display:flex;
+  align-items:flex-end;
+  height: 35px;
+  padding-bottom: 0px;
+  .info-account-name{
+    font-weight: 300;
+    position: relative;
+    top: -8px;
+  }
+  .follow{
+    display: flex;
+    padding: 10px;
+    .a{ 
+      padding-left: 20px;
+      font-size: 15px;
+    }
+    .b{
+      padding-left: 20px;
+      font-size: 15px;
+    }
+
+  }
+}
+
+.info-rr{
+  position: relative;
+  top: 180px;
+  padding-left: 10px;
+}
+
+.post-new-form{
+  padding: 100px;
+  width: 1100px;
+  .post-form-btn{
+    text-align: center;
+    padding: 30px;
+    letter-spacing: 10px;
+  }
+}
+.post-main{
+  padding: 30px;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  display: inline-flex;
+  .post-main-left{
+    width: 600px;
+    .post-title{
+      padding: 25px 20px 3px 0;
+      display: flex;
+      input{
+        font-size: 20px;
+        margin-left: 30px;
+        position: relative;
+        top: -10px;
+        height: 30px;
+        width: 300px;
+        border-bottom:1px solid #cccccc;
+        border-right:none;
+        border-left:none;
+        border-top:none;
+      }
+      input:focus{
+        outline: 0;
+      }
+    }
+    .post-tag{
+      display: flex;
+      padding-top: 20px;
+      margin-left: 20px;
+      label{
+        font-weight: 300;
+      }
+      input{
+        margin-left: 15px;
+        font-size: 13px;
+        height: 20px;
+        width: 200px;
+        border-bottom:1px solid #cccccc;
+        border-right:none;
+        border-left:none;
+        border-top:none;
+      }
+      input:focus{
+        outline: none;
+      }
+    }
+  }
+}
+
+.post-detail{
+  padding: 30px;
+  display: inline-flex;
+  width: 600px;
+  margin: 0;
+  .post-num{
+    padding-right: 20px;
+  }
+  .post-info{
+    padding-bottom: 30px;
+    display: flex;
+    width: 600px;
+    p{
+      width: 200px;
+    }
+
+    input{
+      width: 400px;
+      height: 20px;
+      border-bottom:1px solid #cccccc;
+      border-right:none;
+      border-left:none;
+      border-top:none;
+    }
+    input:focus{
+      outline: none; 
+     }
+  } 
+  .post-comment{
+    display: flex;
+    textarea{
+      margin-left: 130px;
+      width: 400px;
+      height: 150px;
+      overflow-wrap:break-word;
+      font-size: 20px;
+      resize: none;
+    }
+  }
+}
+
+.second-form{
+  padding: 100px;
+  width: 1100px;
+  border: dotted 3px #cccccc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  .second-post-main{
+    padding: 30px;
+    border: solid 1px #cccccc;
+    border-radius: 7px;
+    display: inline-flex;
+    margin-bottom: 30px;
+    .second-post-main-left{
+      width: 500px;
+      .second-title{
+        font-size: 30px;
+      }
+      .second-tag{
+        h3{
+          font-size: 13px;
+          font-weight: 300;
+          border: solid 1px #cccccc;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+        }
+      }
+    }
+    .second-post-main-right{
+      padding-left: 30px;
+    }
+  }
+}
+
+.detail-form{
+  padding: 100px;
+  .detail-form-btn{
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.made-detail{
+  padding: 40px;
+  width: 740px;
+  .made-detail-inner{
+    width: 660px;
+    border:dotted 2px #cccccc;
+    border-radius: 7px;
+    padding: 20px;
+    display: inline-flex;
+    .made-detail-right{
+      width: 70%;
+
+      .detail-num{
+        padding: 5px;
+        display: inline-block;
+      }
+      .made-detail-purpose{
+        background-color: #cccccc;
+        display:inline-block;
+        height: 27px;
+        padding: 5px;
+        margin-bottom: 7px;
+        border-radius: 10px;
+      }
+      .made-detail-name{
+        font-size: 27px;
+      }
+      .made-detail-url{
+        font-size: 10px;
+        padding-bottom: 10px;
+      }
+    }
+    .made-detail-left{
+      .detail-image{
+        padding-right: 30px;
+        img{
+          width: 200px;
+          height: 200px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .detail-edit{
+    display: inline-block;
+    margin-top:10px ;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    padding: 2px 5px;
+    border: black 1px solid;
+    .detail-edit-btn{
+      color: black; 
+      text-decoration: none;
+    }
+  }
+  .detail-edit:hover{
+    box-shadow:0px 0px 2px #ccc;
+    background-color: #d6d6d6;
+  }
+}
+
+.edit-form{
+  width: 70%;
+  .edit-form-inner{
+    text-align: center;
+    padding-top: 100px;
+    .edit-name{
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      font-size: 30px;
+    }
+    .edit-account{
+      border: none;
+      padding: 15px 0;
+    }
+    .edit-comment{
+      padding: 40px 0;
+      textarea{
+        width: 350px;
+        height: 100px;
+        resize: none;
+      }
+    }
+    .edit-image{
+      input{
+        text-align: center;
+      }
+    }
+    .edit-btn{
+      margin-bottom: 100px;
+    }
+
+  }
+}
+
+.info-edit-name{
+  height: 85px;
+  border: solid 1px #cccccc; 
+  border-radius: 6px;
+  .edit-name-form{
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    border: solid 1px #cccccc; 
+    border-radius: 0;  
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.info-edit-account-name{
+  margin-left: 30px;
+  height: 85px;
+  border: solid 1px #cccccc; 
+  margin-bottom: 0px;
+  border-radius: 6px;
+  .edit-account-name-form{
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    border: solid 1px #cccccc; 
+    border-radius: 0;  
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.info-edit-email{
+  margin-top: 20px;
+  height: 85px;
+  border: solid 1px #cccccc; 
+  margin-bottom: 0px;
+  border-radius: 6px;
+  .edit-email-form{
+    width: 450px;
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    border: solid 1px #cccccc; 
+    border-radius: 0;  
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.edit-comment-form{
+  margin-top: 20px;
+  width: 452px;
+  height: 120px;
+  resize: none;
+}
+
+.edit-btn{
+  position: relative;
+  top: 255px;
+  left: 10px;
+}
+
+.finish-edit{
+  text-align: center;
+  background-color: #e6e6e6;
+  display: inline-block;
+  margin-left: 40%;
+  font-size: 13px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: black 1px solid;
+ .finish-edit-btn{
+  color: black;
+  text-decoration: none;
+ } 
+}
+.finish-btn:hover{
+  box-shadow:0px 0px 10px #ccc;
+  background-color: #d0d0d0;
+  
+}
+
+.go-confirm{
+  text-align: center;
+  background-color: #e6e6e6;
+  display: inline-block;
+  margin-left: 40%;
+  font-size: 13px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: black 1px solid;
+  .go-confirm-btn{
+    color: black;
+    text-decoration: none;
+  }
+}
+.go-confirm:hover{
+  box-shadow:0px 0px 10px #ccc;
+  background-color: #d0d0d0;
+  
+}

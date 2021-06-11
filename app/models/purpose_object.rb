@@ -1,0 +1,3 @@
+class PurposeObject < ApplicationRecord
+
+end

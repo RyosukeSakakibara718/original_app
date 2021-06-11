@@ -1,0 +1,45 @@
+<%= form_for @post, url: post_index_path do |f| %>
+  <div class="post-new-form">
+    <div class="post-new-form-inner">
+      <h1>旅のしおりを作る</h1>
+      <div class = "post-main">
+
+        <div class="post-main-left">
+          <div class="post-title">
+            <%= f.label :"投稿タイトル:" %>
+            <%= f.text_field :title, class: 'input-form' %>
+          </div>  
+          <div class="post-tag">
+             <%= f.label :"タグ:" %>
+            <%= f.text_field :tag_id, class: 'input-form' %>
+          </div>
+        </div>
+
+      <div class="post-main-right">
+        <div class="post-days">
+          <p>宿泊日数：<br>
+          <%= f.select :stay, {'1泊': 1,  '2泊': 2, '3泊': 3, '4泊': 4, '5泊': 5, '6泊': 6, '7泊': 7}, { required: true } %>
+          <%= f.select :days, {"1日": 1, "2日": 2, "3日": 3, "4日": 4, "5日": 5, "6日": 6, "7日": 7, "8日": 8}, { required: true } %>
+          </p>
+        </div >
+        <div class="post-who">
+          <p>誰との旅行：<br>
+            <%= f.select :who, {"ひとり": 1, "友達(2人)": 2, "友達(3人以上)": 3, "カップル": 4, "夫婦": 5, "家族": 6},{reqired: true} %>
+        </div>
+        <div class="post-total-money">
+          <p>この旅行にかけるお金：<br>
+          <%= f.select :total_money, {"~5,000円": 1, "5,001~10,000円": 2, "10,001~15,000円": 3, "15,001~20,000円": 4, "20,001~25,000円": 5, "25,001~30,000円": 6, "30,001~35,000円": 7, "35,001~40,000円": 8, "40,001~45,000円": 9, "45,001~50,000円": 10, "50,000~75,000円": 11, "75,001~100,000円": 12, "100,001~199,999円": 13, "200,000円~": 14},{reqired: true} %>
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+  <div class="post-form-btn">
+    <input type="submit" value="確認する">
+    <%= f.submit "次へ" %>
+  </div>
+
+</div>
+
+<% end %>
