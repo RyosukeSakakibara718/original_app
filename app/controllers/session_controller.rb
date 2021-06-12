@@ -2,7 +2,7 @@ class SessionController < ApplicationController
   def new
   end
 
-  
+
   def login
     user = User.find_by(email: params[:session][:email])
     if  user && user.authenticate(params[:session][:password])
@@ -11,6 +11,7 @@ class SessionController < ApplicationController
     else
         redirect_to new_user_path
         flash[:no_account] = "アカウントが見つかりません"
+
     end
 
   end
