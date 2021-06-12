@@ -1,3 +1,9 @@
+<% if flash[:no_account] %>
+  <div class="login_failure">
+    <div class="login_failure_mes"><%= flash[:no_account] %>
+  </div>  
+<% end %>  
+
 <%= form_for @user do |f| %>
   
 <div class="user-make">  

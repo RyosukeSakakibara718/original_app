@@ -8,7 +8,8 @@ class SessionController < ApplicationController
         log_in user
         redirect_to user_path(user)
     else
-        render 'new'
+        redirect_to new_user_path
+        flash[:no_account] = "アカウントが見つかりません"
     end
 
   end

@@ -48,6 +48,7 @@ TotalMoneyObject.create(content: "75,001~100,000円")
 TotalMoneyObject.create(content: "100,001~199,999円")
 TotalMoneyObject.create(content: "200,000円~")
 
+
 PurposeObject.create(content: "観光")
 PurposeObject.create(content: "宿泊")
 PurposeObject.create(content: "食事")
