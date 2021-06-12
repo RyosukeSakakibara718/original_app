@@ -2,6 +2,7 @@ class SessionController < ApplicationController
   def new
   end
 
+  
   def login
     user = User.find_by(email: params[:session][:email])
     if  user && user.authenticate(params[:session][:password])
