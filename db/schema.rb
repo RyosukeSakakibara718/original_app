@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_111403) do
 
   create_table "purpose_objects", force: :cascade do |t|
     t.string "content"
+    t.string "detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

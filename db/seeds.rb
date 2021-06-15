@@ -8,6 +8,7 @@
 
 # coding: utf-8
 
+User.create(name:"ryosuke",email: "vala_0718@icloud.com",password: "123456")
 
 StayObject.create(content: "1泊")
 StayObject.create(content: "2泊")
