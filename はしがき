@@ -1,0 +1,53 @@
+class DaysObject < ApplicationRecord
+  belongs_to :post,class_name: "Post",foreign_key: "post_id"
+end
+
+class PostDetail < ApplicationRecord
+  belongs_to :post, class_name: "Post",foreign_key:"post_id"
+  belongs_to :user,class_name: "User",foreign_key:"user_id"
+  has_many :purpose, class_name: "PurposeObject"
+
+  mount_uploader :detail_image, PostDetailImagesUploader
+
+end
+
+class Post < ApplicationRecord
+  has_many :detail,class_name: "PostDetail"
+  has_many :stay, class_name: "StayObject"
+  has_many :days, class_name: "DaysObject"
+  has_many :who, class_name: "WhoObject"
+  has_many :total, class_name: "TotalMoneysObject"
+  belongs_to :user,class_name:"User",foreign_key: "user_id"
+end
+
+class PurposeObject < ApplicationRecord
+  belongs_to :detail, class_name: "PostDeatil",foreign_key: "detail_id"
+end
+
+class StayObject < ApplicationRecord
+  belongs_to :post,class_name: "Post",foreign_key: "post_id"
+end
+
+class TotalMoneyObject < ApplicationRecord
+  belongs_to :post,class_name: "Post",foreign_key: "post_id"
+end
+
+class User < ApplicationRecord
+  has_secure_password
+
+  validates :name,{presence: true}
+  validates :email,{presence: true, uniqueness: true}
+
+  has_many :post,class_name: "Post"
+  has_many :detail,class_name: "PostDetail"
+end
+
+
+class WhoObject < ApplicationRecord
+  belongs_to :post,class_name: "Post",foreign_key: "post_id"
+end
+
+<div class="post-total-money">
+   <p>この旅行にかけるお金：<br>
+   <%= f.select :total_money, {"~5,000円": "~5,000円", "5,001~10,000円": "5,001~10,", "10,001~15,000円": "10,001~15,000円", "15,001~20,000円": "15,001~20,000円", 001~25,000円": "20,001~25,000円", "25,001~30,000円": "25,001~30,000円", "30,001000円": "30,001~35,000円", "35,001~40,000円": "35,001~40,000円", "40,001~45,000"40,001~45,000円", "45,001~50,000円": "45,001~50,000円", "50,000~75,000円": 000~75,000円", "75,001~100,000円": "75,001~100,000円", "100,001~199,999円": "001~199,999円", "200,000円~": "200,000円~"},{reqired: true} %>
+</div>

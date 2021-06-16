@@ -23,7 +23,6 @@ class PostController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    object_find @post
     @post_detail = PostDetail.new
     @made_post_detail = PostDetail.where(post_id: @post.id)
   end
@@ -45,7 +44,13 @@ class PostController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
     @post_detail = PostDetail.find_by(post_id: @post.id)
-    object_find @post
+    @made_post_detail = PostDetail.where(post_id: @post.id)
+  end
+
+  def viewing
+    @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
+    @post_detail = PostDetail.find_by(post_id: @post.id)
     @made_post_detail = PostDetail.where(post_id: @post.id)
   end
 
@@ -55,14 +60,7 @@ class PostController < ApplicationController
 
   def detail_update
     @post_detail = PostDetail.find(params[:id])
-    @post_detail.name = params[:name]
-    @post_detail.place = params[:place]
-    @post_detail.purpose = params[:purpose]
-    @post_detail.url = params[:url]
-    @post_detail.hours_open = params[:hours_open]
-    @post_detail.hours_close = params[:hours_close]
-    @post_detail.comment = params[:comment]
-    @post_detail.detail_image = params[:detail_image]
+    @post_detail.update(post_detail_params)
     if @post_detail.save
       redirect_to post_confirm_path(id: @post_detail.post_id)
     end
@@ -77,11 +75,11 @@ class PostController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title,:tag_id,:stay,:days,:who,:total_money)
+    params.require(:post).permit(:title,:tag_id,:stay,:days,:who)
   end
 
   def post_detail_params
-    params.require(:post_detail).permit(:name,:place,:purpose,:url,:hours_open,:hours_close,:comment,:detail_image)
+    params.require(:post_detail).permit(:name,:place,:purpose,:url,:hours_open,:hours_close,:comment,:detail_image,:cost)
   end
 
 end

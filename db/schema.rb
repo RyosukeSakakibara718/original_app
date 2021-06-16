@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_06_10_111403) do
 
   create_table "days_objects", force: :cascade do |t|
+    t.integer "post_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_111403) do
   create_table "post_details", force: :cascade do |t|
     t.integer "post_id"
     t.integer "user_id"
-    t.integer "purpose"
+    t.string "purpose"
     t.string "name"
     t.string "place"
     t.text "url"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_111403) do
     t.time "hours_open"
     t.time "hours_close"
     t.string "detail_image"
+    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,28 +39,29 @@ ActiveRecord::Schema.define(version: 2021_06_10_111403) do
     t.integer "user_id"
     t.string "title"
     t.integer "tag_id"
-    t.integer "stay"
-    t.integer "days"
-    t.integer "who"
-    t.integer "total_money"
+    t.string "stay"
+    t.string "days"
+    t.string "who"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "purpose_objects", force: :cascade do |t|
     t.string "content"
-    t.string "detail_id"
+    t.integer "detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "stay_objects", force: :cascade do |t|
+    t.integer "post_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "total_money_objects", force: :cascade do |t|
+    t.integer "post_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_111403) do
   end
 
   create_table "who_objects", force: :cascade do |t|
+    t.integer "post_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

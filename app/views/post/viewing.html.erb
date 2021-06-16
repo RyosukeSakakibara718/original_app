@@ -1,0 +1,100 @@
+
+
+<div class="second-form">
+    <div class="viewing-prof">
+      <img src = "<%="/user_images/#{@post.user.user_image}"%>" class= "viewing-user-img">
+      <div class="viewing-user-name">
+        <p><%= link_to "#{ @post.user.name }", user_path ,class: "v-user-name" %>　さんの投稿ページ</p>
+      </div>  
+
+    </div>
+    <div class="second-form-inner">
+      <h1></h1>
+      <div class = "second-post-main">
+
+        <div class="second-post-main-left">
+          <div class="second-title">
+           <p>旅行タイトル：
+           <%= @post.title %>
+           </p>
+          </div>  
+          <div class="second-tag">
+            <p>タグ：</p>
+            <h3><%= @post.tag_id  %></h3>
+          </div>
+        </div>
+        
+
+        <div class="second-post-main-right">
+          <div class="second-days">
+            <p>宿泊日数: <%=  @post.stay %><%= @post.days %></p>
+          </div >
+          <div class="secons-who">
+            <p>誰との旅行：<%= @post.who %></p>
+          </div>
+          <div>
+            <p>合計金額：</p>
+          </div>
+        </div>
+
+      </div>
+      <% if @create_detail %>
+      <% end %>
+  
+    </div>
+
+    <% if @made_post_detail %>
+      <% @made_post_detail.each.with_index(1) do |f,i| %>
+      <div class="made-detail">
+          <div class="made-detail-inner">
+          <div class="made-detail-left">
+             <div class="detail-image">
+               <img src = "<%="#{f.detail_image}"%>" class= "detail_img">
+             </div>
+          </div>
+          <div class="made-detail-right">
+            <p class="detail-num"><%= i %></p>
+            <div class="made-detail-purpose">
+            <p>目的：<%= f.purpose %></p></div>
+            <div class="made-detail-name"><p>訪れた場所：<%= f.name %></p></div>
+            <div class="made-detail-url"><p>参考URL：<%= link_to "詳しくはこちら", f.url, target: :_blank %></p></div>
+            <div class="made-detail-place"><p>場所：<%= f.place %></p></div>
+            <div class="made-detail-hours"><p>営業時間：
+
+            <% if f.hours_open.hour != 0 %>
+              <%= f.hours_open.hour %> :
+            <% else %>
+              00 :
+            <% end %>
+
+            <% if f.hours_open.min != 0 %>
+              <%= f.hours_open.min %>から
+            <% else %>
+              00から
+            <% end %>
+                    
+            <% if f.hours_close.hour != 0 %>
+              <%= f.hours_close.hour %> :
+            <% else %>
+              00 :
+            <% end %>  
+            
+            <% if f.hours_close.min != 0 %>
+              <%=  f.hours_close.min %>まで
+            <% else %>  
+              00まで
+            <% end %>
+            
+            </p></div>
+            <div class="made-detail-cost"><p>かかった金額：<%= f.cost %>円</p></div>
+            <div><p>コメント：<%= f.comment %></p></div>
+          </div>  
+        </div>  
+      </div>
+
+      <% end %>
+    <% end %>  
+    <div class="go-user-page">
+      <%= link_to "#{ @post.user.name }　さんのページに戻る", user_path ,class: "v-user-name" %>
+    </div>  
+</div>

@@ -19,8 +19,42 @@
     <div class="info-rr">
       <%= link_to '編集', edit_user_path(id: @user.id) ,class:"info-edit" %>
     </div>
+
   </div>  
-  <div>
+  <% @user.post.each do |f| %>
+    <div class="user-travel-info">
     
-  </div>
+      
+        <div class="user-travel-left">  
+          <div class="detail-img-box">
+            <% f.details.first(4).each do |d| %>
+              <div class="user-detail-img">
+                <%= link_to (image_tag "#{d.detail_image}"), viewing_path(f.id) %>
+              </div>  
+            <% end %>
+          </div>
+        </div>
+    
+        <div class="user-travel-right">  
+
+          <div class="travel-title">
+            <p>旅行タイトル：<%= f.title %></p>
+          </div>
+          <div class="travel-days">
+            <p>宿泊日数：<%= f.stay %><%= f.days %></p>
+          </div>  
+          <div class="travel-who">
+            <p>誰と：<%= f.who %></p>
+          </div>
+          <div class="travel-cost">
+            <p>合計予算：______円</p>
+          </div>
+          <div class="travel-like">
+          <p>___　いいね　　___コメント</p>
+          </div>
+
+        </div> 
+    </div>  
+  <% end %>
 </div>  
+

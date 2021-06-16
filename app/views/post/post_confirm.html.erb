@@ -18,14 +18,13 @@
 
         <div class="second-post-main-right">
           <div class="second-days">
-            <p>宿泊日数: <%=  @stay_object.content %><%= @days_object.content %></p>
+            <p>宿泊日数: <%=  @post.stay %><%= @post.days %></p>
           </div >
           <div class="secons-who">
-            <p>誰との旅行：<%= @who_object.content %></p>
+            <p>誰との旅行：<%= @post.who %></p>
           </div>
-          <div class="second-total-money">
-            <p>この旅行にかけるお金：</p>
-            <%= @total_money_object.content %>
+          <div>
+            <p>合計金額：</p>
           </div>
         </div>
 
@@ -47,7 +46,7 @@
           <div class="made-detail-right">
             <p class="detail-num"><%= i %></p>
             <div class="made-detail-purpose">
-            <p>目的：<%= f %></p></div>
+            <p>目的：<%= f.purpose %></p></div>
             <div class="made-detail-name"><p>訪れた場所：<%= f.name %></p></div>
             <div class="made-detail-url"><p>参考URL：<%= link_to "詳しくはこちら", f.url, target: :_blank %></p></div>
             <div class="made-detail-place"><p>場所：<%= f.place %></p></div>
@@ -78,6 +77,7 @@
             <% end %>
             
             </p></div>
+            <div class="made-detail-cost"><p>かかった金額：<%= f.cost %>円</p></div>
             <div><p>コメント：<%= f.comment %></p></div>
           </div>  
         </div>  
@@ -85,9 +85,14 @@
       </div>
 
       <% end %>
-      <div class="finish-edit">
-      <%= link_to "完成", user_path , class: "finish-edit-btn" %>
-      </div>
+      <div class="confirm-btn">
+        <div class="finish-edit">
+          <%= link_to "完成", user_path , class: "finish-edit-btn" %>
+        </div>
+        <div class="return-post-make">
+          <%= link_to "更に追加する", post_path(@post) , class: "return-btn" %>
+        </div>
+      </div>  
     <% end %>  
 
 </div>

@@ -18,14 +18,10 @@
 
         <div class="second-post-main-right">
           <div class="second-days">
-            <p>宿泊日数: <%=  @stay_object.content %><%= @days_object.content %></p>
+            <p>宿泊日数: <%=  @post.stay %><%= @post.days %></p>
           </div >
           <div class="secons-who">
-            <p>誰との旅行：<%= @who_object.content %></p>
-          </div>
-          <div class="second-total-money">
-            <p>この旅行にかけるお金：</p>
-            <%= @total_money_object.content %>
+            <p>誰との旅行：<%= @post.who %></p>
           </div>
         </div>
 
@@ -45,7 +41,7 @@
             <div class="made-detail-right">
               <p class="detail-num"><%= i %></p>
               <div class="made-detail-purpose">
-              <p>目的：<%= PurposeObject.find(f.purpose).content %></p></div>
+              <p>目的：<%= f.purpose %></p></div>
               <div class="made-detail-name"><p>訪れた場所：<%= f.name %></p></div>
               <div class="made-detail-url"><p>参考URL：<%= link_to "詳しくはこちら", f.url, target:   :_blank %></p></div>
               <div class="made-detail-place"><p>場所：<%= f.place %></p></div>
@@ -76,6 +72,7 @@
               <% end %>
               
               </p></div>
+              <div class="made-detail-cost"><p>かかった金額：<%= f.cost %>円</p></div>
               <div><p>コメント：<%= f.comment %></p></div>
   
             </div> 

@@ -267,6 +267,20 @@ header {
       outline: none; 
      }
   } 
+  .post-cost{
+    input{
+      width: 80px;
+      border: solid 2px #242424;
+      border-radius: 2px;
+    }
+    .cost{
+      width: 40px;
+      display: flex;
+      p{
+        padding-left: 10px;
+      }
+    }
+  }
   .post-comment{
     display: flex;
     textarea{
@@ -313,6 +327,25 @@ header {
       padding-left: 30px;
     }
   }
+  .viewing-prof{
+    display: flex;
+
+    .viewing-user-img{
+      border-radius: 20px;
+      width: 60px;
+      height: 60px;
+    }
+    .viewing-user-name{
+      font-size: 30px;
+      padding-left: 10px;
+    }
+    .v-user-name{
+      color: black;
+    }
+  }
+  .go-user-page{
+    padding-left: 40px;
+  }
 }
 
 .detail-form{
@@ -353,6 +386,10 @@ header {
       .made-detail-url{
         font-size: 10px;
         padding-bottom: 10px;
+      }
+
+      .made-detail-cost{
+        
       }
     }
     .made-detail-left{
@@ -482,19 +519,36 @@ header {
   left: 10px;
 }
 
-.finish-edit{
+.confirm-btn{
+  width: 700px;
   text-align: center;
-  background-color: #e6e6e6;
-  display: inline-block;
-  margin-left: 40%;
-  font-size: 13px;
-  padding: 2px 5px;
-  border-radius: 3px;
-  border: black 1px solid;
- .finish-edit-btn{
-  color: black;
-  text-decoration: none;
- } 
+
+  .finish-edit{
+    background-color: #e6e6e6;
+    display: inline-block;
+    margin-left: 10%;
+    font-size: 13px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: black 1px solid;
+   .finish-edit-btn{
+    color: black;
+    text-decoration: none;
+    }
+  }
+  .return-post-make{
+    background-color: #e6e6e6;
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 13px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      border: black 1px solid;
+    .return-btn{
+      color: black;
+      text-decoration: none;
+    }
+  }
 }
 .finish-btn:hover{
   box-shadow:0px 0px 10px #ccc;
@@ -533,4 +587,45 @@ header {
     top: 80px;
   }
 }
-
+.user-travel-info{
+  display: flex;
+  margin-left: 100px;
+  border: solid 1px #cecece;
+  border-radius: 5px;
+  width: 700px;
+  padding: 10px;
+  margin-bottom: 30px;
+  .user-travel-left{
+    .detail-img-box{
+      width: 230px;
+      padding-left: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+    
+    .user-detail-img{
+      padding: 1px;
+    img{
+      width:  100px;
+      height: 100px;
+      border-radius: 2px;
+    }
+  }
+    }
+  }
+  .user-travel-right{
+   padding: 10px;
+   .travel-title{
+     font-size: 30px;
+   }
+   .travel-days{
+     font-size: 20px;
+   }
+   .travel-who{
+     font-size: 20px;
+   }
+   .travel-cost{
+     font-size: 20px;
+   }
+  }     
+}
