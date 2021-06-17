@@ -1,0 +1,28 @@
+<div class="home-post">
+  <% @post.order("id DESC").each do |f| %>
+    <div class="home-post-inner">
+      <div class="home-up">
+        <div class="home-upper">
+          <div class="home-prof-img">
+            <%= link_to (image_tag "/user_images/#{f.user.user_image}"), user_path(f.user.id) %>
+          </div>
+          <div class="home-name">
+            <%= f.user.name %>
+          </div>  
+        </div>  
+        <div class="home-created-at">
+          <p><%= f.created_at.month %>月<%= f.created_at.day %>日に作られた投稿</p>
+        </div>
+      </div>  
+      <div class="home-detail-image">
+      <% f.details.first(4).each do |d| %>
+        <% if d.detail_image? %>      
+          <%= link_to (image_tag "#{d.detail_image}"), viewing_path(d.post.id) %>
+        <% else %>
+          <%= link_to (image_tag "/user_images/0.png"), viewing_path(d.post.id) %> 
+        <% end %>   
+      <% end %>
+      </div>
+    </div>
+  <% end %>    
+</div>  

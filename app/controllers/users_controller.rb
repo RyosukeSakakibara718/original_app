@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.user_image = "0.jpg"
+    @user.user_image = "0.png"
     if @user.save
       redirect_to @user
       log_in @user
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     @user.account_name= params[:account_name]
     @user.email= params[:email]
     @user.comment= params[:comment]
-    @user.name= params[:name]
     if params[:user_image]
       @user.user_image = "#{@user.id}.jpg"
       File.binwrite("public/user_images/#{@user.id}.jpg",params[:user_image].read)
@@ -54,5 +53,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name,:account_name,:email,:comment,:password,:password_confirmation)
+  end
+  
+  def update_params
+    params.require(:user).permit(:name,:account_name,:email,:comment,:user_image)
   end
 end

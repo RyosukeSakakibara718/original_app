@@ -30,7 +30,7 @@ class PostController < ApplicationController
   def create_detail
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
-    @post_detail = PostDetail.new(post_detail_params) 
+    @post_detail = PostDetail.new(post_detail_params)
     @post_detail.post_id = @post.id 
     @post_detail.user_id = @post.user_id
   if @post_detail.save
@@ -63,6 +63,18 @@ class PostController < ApplicationController
     @post_detail.update(post_detail_params)
     if @post_detail.save
       redirect_to post_confirm_path(id: @post_detail.post_id)
+    end
+  end
+
+  def detail_edit_from_viewing
+    @post_detail = PostDetail.find(params[:id])
+  end
+
+  def detail_from_viewing_update
+    @post_detail = PostDetail.find(params[:id])
+    @post_detail.update(post_detail_params)
+    if @post_detail.save
+      redirect_to viewing_path(id: @post_detail.post_id)
     end
   end
 

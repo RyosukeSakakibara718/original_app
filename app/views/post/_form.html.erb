@@ -46,7 +46,7 @@
         </div>
         <div>
           <p>この旅行の写真：</p>
-          <%= f.file_field :detail_image %>
+          <%= f.file_field :detail_image,value: "0.jpg" %>
         </div>
         <div class="detail-form-btn">
           <%= f.submit "追加する", :name=>"add" %>

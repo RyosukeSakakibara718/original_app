@@ -16,5 +16,8 @@ Rails.application.routes.draw do
 
   get 'post_detail/edit/:id', to: 'post#detail_edit', as: 'detail_edit'
   patch 'post_detail/update/:id', to: 'post#detail_update',as: 'detail_update' 
+  
+  get 'detail_from_viewing/edit/:id', to: 'post#detail_edit_from_viewing', as: 'detail_edit_from_viewing'
+  patch 'detail_from_viewing/update/:id', to: 'post#detail_from_viewing_update',as: 'detail_from_viewing_update' 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

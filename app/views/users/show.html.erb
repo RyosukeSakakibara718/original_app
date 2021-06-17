@@ -29,7 +29,11 @@
           <div class="detail-img-box">
             <% f.details.first(4).each do |d| %>
               <div class="user-detail-img">
-                <%= link_to (image_tag "#{d.detail_image}"), viewing_path(f.id) %>
+                <% if d.detail_image? %>
+                  <%= link_to (image_tag "#{d.detail_image}"), viewing_path(f.id) %>
+                <% else %>
+                  <%= link_to (image_tag "/user_images/0.png"), viewing_path(f.id) %>
+                <% end %>  
               </div>  
             <% end %>
           </div>
@@ -47,10 +51,10 @@
             <p>誰と：<%= f.who %></p>
           </div>
           <div class="travel-cost">
-            <p>合計予算：______円</p>
+            <p>合計予算：<%= f.details.sum(:cost) %>円</p>
           </div>
           <div class="travel-like">
-          <p>___　いいね　　___コメント</p>
+            <p>___　いいね　　___コメント</p>
           </div>
 
         </div> 

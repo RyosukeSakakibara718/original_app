@@ -24,7 +24,7 @@
             <p>誰との旅行：<%= @post.who %></p>
           </div>
           <div>
-            <p>合計金額：</p>
+            <p>合計金額：<%= @post.details.sum(:cost) %>円</p>
           </div>
         </div>
 

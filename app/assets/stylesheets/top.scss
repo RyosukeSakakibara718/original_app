@@ -394,7 +394,7 @@ header {
     }
     .made-detail-left{
       .detail-image{
-        padding-right: 30px;
+        padding: 20px;
         img{
           width: 200px;
           height: 200px;
@@ -602,13 +602,12 @@ header {
       display: flex;
       flex-wrap: wrap;
       padding: 10px;
-    
-    .user-detail-img{
-      padding: 1px;
-    img{
-      width:  100px;
-      height: 100px;
-      border-radius: 2px;
+      .user-detail-img{
+        padding: 1px;
+        img{
+          width:  100px;
+          height: 100px;
+          border-radius: 2px;
     }
   }
     }
@@ -628,4 +627,46 @@ header {
      font-size: 20px;
    }
   }     
+}
+.home-post{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 200px;
+  .home-post-inner{
+  padding: 50px;
+  .home-up{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .home-upper{
+      display: flex;
+      flex-wrap: wrap;
+      .home-prof-img{
+  
+        img{
+          width:  40px;
+          height: 40px;
+          border-radius: 20px;
+        }
+      }
+      .home-name{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 7px;
+        font-size: 22px;
+      }
+    }
+  }
+  .home-detail-image{
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    margin-top: 1px;
+    img{
+      width: 240px;
+      height: 150px;
+    }
+  }
+  }
 }

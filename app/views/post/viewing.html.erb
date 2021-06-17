@@ -33,7 +33,7 @@
             <p>誰との旅行：<%= @post.who %></p>
           </div>
           <div>
-            <p>合計金額：</p>
+            <p>合計金額：<%= @post.details.sum(:cost) %>円</p>
           </div>
         </div>
 
@@ -49,7 +49,11 @@
           <div class="made-detail-inner">
           <div class="made-detail-left">
              <div class="detail-image">
-               <img src = "<%="#{f.detail_image}"%>" class= "detail_img">
+              <% if f.detail_image? %>
+                <img src = "<%="#{f.detail_image}"%>" class= "detail_img">
+              <% else %>
+                <img src = "/user_images/0.png" class= "detail_img">
+              <% end %>    
              </div>
           </div>
           <div class="made-detail-right">
@@ -90,8 +94,11 @@
             <div><p>コメント：<%= f.comment %></p></div>
           </div>  
         </div>  
+        <% if( session[:user_id] == Post.find(params[:id]).user.id ) %>
+          <%= link_to "修正する", detail_edit_from_viewing_path(f.id) %>
+        <% end %>
       </div>
-
+      
       <% end %>
     <% end %>  
     <div class="go-user-page">
